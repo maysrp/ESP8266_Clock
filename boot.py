@@ -18,7 +18,7 @@ class clock:
         self.display = max7219.Matrix8x8(hspi,Pin(5),4)
     def ntp(self):
         self.net()
-        ntptime.host='ntp.aliyun.com'
+        ntptime.host='ntp.aliyun.com' #ntp server
         try:
             ntptime.settime()
         except Exception as e:
