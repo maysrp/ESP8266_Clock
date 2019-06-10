@@ -4,7 +4,7 @@ Max7219 8*32
 
 HSPI
 |MAX7219|ESP8266|
-|-|-|
+-|-
 |VCC|Vin|
 |GDN|GDN|
 |DIN|GPIO13(D7)|
