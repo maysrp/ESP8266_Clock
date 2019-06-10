@@ -2,7 +2,8 @@
 ESP8266 Micropython clock  
 Max7219 8*32   
 
-HSPI
+HSPI  
+
 |MAX7219|ESP8266|
 -|-
 |VCC|Vin|
