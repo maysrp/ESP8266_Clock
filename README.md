@@ -11,3 +11,5 @@ HSPI
 |DIN|GPIO13(D7)|
 |CLK|GPIO14(D5)|
 |CS|GPIO5(D1)|
+
+[max7219](https://github.com/mcauser/micropython-max7219)
