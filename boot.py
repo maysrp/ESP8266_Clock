@@ -8,6 +8,8 @@ class clock:
         self.ntp()
         self.dp()
         self.se=0
+        self.time_zone=8 #your Time zone
+        self.host='ntp.aliyun.com' #ntp server
     def net(self):
         wlan = network.WLAN(network.STA_IF) 
         wlan.active(True) 
@@ -18,7 +20,7 @@ class clock:
         self.display = max7219.Matrix8x8(hspi,Pin(5),4)
     def ntp(self):
         self.net()
-        ntptime.host='ntp.aliyun.com' #ntp server
+        ntptime.host=self.host
         try:
             ntptime.settime()
         except Exception as e:
@@ -33,7 +35,7 @@ class clock:
         self.display.show()
     def show_time(self):
         ti=time.localtime()
-        h=ti[3]+8 if ti[3]+8<24 else ti[3]-16
+        h=ti[3]+self.time_zone if ti[3]+self.time_zone<24 else ti[3]+self.time_zone-24
         h=h if h>9 else '0'+str(h)
         m=ti[4]
         m=m if m>9 else '0'+str(m)
